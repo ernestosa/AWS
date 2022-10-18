@@ -1,0 +1,8 @@
+import boto3
+import pandas as pd
+DynamoDB = boto3.resource("dynamodb', 'us-east-2')
+table = DynamoDB. Table('Locations')
+response = table.scan
+df = pd. DataFrame (response[ 'Items'],
+print(df.to_string(index=False))
+columns=['City', 'State', 'Zip', 'TimeZone'])
